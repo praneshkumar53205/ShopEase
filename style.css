@@ -1,3 +1,4 @@
+
 body {
     background-color: lightblue;
     display: flex;
@@ -5,14 +6,16 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 h1 {
     color: darkblue;
     font-family: Georgia, serif;
     background-color: white;
-    padding: 20px;
-    margin: 30px;
+    padding: 12px;
+    margin: 10px 0 15px;
     border: 2px solid black;
 }
 
@@ -25,8 +28,8 @@ p {
 .container {
     background-color: white;
     width: 450px;
-    padding: 30px;
-    margin: 20px;
+    padding: 20px;
+    margin: 10px;
     border: 1px solid gray;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -36,7 +39,7 @@ p {
 input {
     width: 50%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 5px 0;
     border: 1px solid gray;
     border-radius: 6px;
     box-sizing: border-box;
@@ -59,7 +62,7 @@ button:hover {
 select {
     width: 35%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 5px 0;
     border: 1px solid gray;
     border-radius: 6px;
     box-sizing: border-box;
@@ -68,6 +71,11 @@ select {
 @media (max-width: 600px) {
     .container {
         width: 90%;
-        padding: 20px;
+        padding: 15px;
     }
+}
+#emailError {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.2;
 }
