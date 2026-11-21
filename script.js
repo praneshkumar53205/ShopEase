@@ -104,7 +104,7 @@ if (customerName === "") {
     try {
     registerButton.disabled = true;
     registerButton.textContent = "Processing...";
-    let response = await fetch("https://pranesh500.app.n8n.cloud/webhook-test/9b2c3af4-78c2-46d9-9ee3-2ea85f9df5d2", {
+    let response = await fetch("https://pranesh500.app.n8n.cloud/webhook/9b2c3af4-78c2-46d9-9ee3-2ea85f9df5d2", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
