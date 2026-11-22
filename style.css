@@ -79,3 +79,261 @@ select {
     margin: 0;
     line-height: 1.2;
 }
+#productContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+
+}
+.product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.product-card {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.product-card h3 {
+    color: #333;
+}
+
+.product-card h4 {
+    color: #6c4ce4;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .dashboard-container {
+        width: 95%;
+        padding: 12px;
+        margin: 10px auto;
+    }
+
+    #productContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 110px;
+    }
+
+    .product-card h3 {
+        font-size: 15px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .product-card h4 {
+        font-size: 16px;
+    }
+
+}
+.dashboard-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 10px auto;
+    padding: 12px;
+    background-color: #f8f9fc;
+    text-align: center;
+}
+.product-card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: darkgreen;
+    text-align: center;
+}
+
+.product-card button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+body.dashboard-page {
+    display: block;
+    min-height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Registration Form Alignment */
+
+#registrationForm {
+    width: 100%;
+    max-width: 380px;
+    margin: 25px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    gap: 10px;
+}
+
+.form-group label {
+    width: 105px;
+    flex-shrink: 0;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+#registrationForm input,
+#registrationForm select {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-group #emailError {
+    flex-basis: calc(100% - 115px);
+    margin: 0 0 0 115px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-buttons button {
+    padding: 12px 20px;
+}
+
+@media (max-width: 600px) {
+    #registrationForm {
+        max-width: 100%;
+    }
+
+    .form-group label {
+        width: 95px;
+    }
+
+    .form-buttons button {
+        padding: 12px 15px;
+    }
+}
+
+/* UPDATED SHOPPING PRODUCT CARDS */
+
+#productContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.product-card {
+    min-width: 0;
+    box-sizing: border-box;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background-color: #f8f9fc;
+    border-radius: 8px;
+    margin: 0 auto 8px;
+}
+
+.product-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 5px 0 3px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: darkgreen;
+    text-align: center;
+    margin: 2px 0 6px;
+}
+
+.product-card h4 {
+    color: #6c4ce4;
+    font-size: 20px;
+    margin: 5px 0 8px;
+}
+
+.product-card button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+
+    #productContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 8px;
+    }
+
+    .product-card img {
+        height: 190px;
+    }
+
+    .product-card h3 {
+        font-size: 15px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .product-card h4 {
+        font-size: 16px;
+    }
+
+}

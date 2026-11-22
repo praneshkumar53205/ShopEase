@@ -12,28 +12,53 @@
     <h1>Welcome to ShopEase–Your Smart Shopping Partner.</h1>
 
     <p>Register today and receive a personalized welcome email!</p>
-    <form id="registrationForm">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" required>
-    <br><br>
-    <label for="email">Your Email:</label>
-    <input type="text" id="email" required>
-    <p id="emailError"></p><br>
+   
+<form id="registrationForm">
 
-    <label for="language">Choose Your Language:</label>
-    <select id="language" required>
-    <option value="" disabled selected>Select your language</option>
-    <option value="English">English</option>
-    <option value="Tamil">Tamil</option>
-</select>
-    <br><br>
+    <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="text" id="email" required>
+        <p id="emailError"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Your Password:</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            minlength="8"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="language">Choose Your Language:</label>
+        <select id="language" required>
+            <option value="" disabled selected>Select your language</option>
+            <option value="English">English</option>
+            <option value="Tamil">Tamil</option>
+        </select>
+    </div>
+
+    <div class="form-buttons">
     <button type="submit" id="registerButton">Register</button>
-    <button type="button" id="clearDataButton">
-    Clear Test Data
-</button>
-    </form>
+</div>
+
+</form>
+<p class="login-link">
+    Already have an account?
+    <a href="login.html">Log In</a>
+</p>
+
     <p id="message"></p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 </html>

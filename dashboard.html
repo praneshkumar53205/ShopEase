@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+
+    <div class="dashboard-container">
+
+        <h1>Welcome to ShopEase!</h1>
+
+        <p id="customerWelcome">Loading customer details...</p>
+
+        <h2>Explore Our Products</h2>
+
+<p>Discover products selected just for you!</p>
+<div class="cart-section">
+    <h2>
+        🛒 My Cart:
+        <span id="cartCount">0</span>
+    </h2>
+</div>
+<div id="productContainer"></div>
+
+<button id="logoutButton">Logout</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

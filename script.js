@@ -1,5 +1,29 @@
-let registerButton = document.getElementById("registerButton");
-let clearDataButton = document.getElementById("clearDataButton");
+// SUPABASE CONNECTION
+const SUPABASE_URL = "https://yotxhnqienfkzozozdac.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_bcFs3yr8QcC6Hc0v1WIdsA_o_vGDdnl";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+// AUTOMATIC REDIRECT FOR LOGGED-IN CUSTOMERS
+(async function redirectLoggedInCustomer() {
+
+    const { data, error } =
+        await supabaseClient.auth.getSession();
+    console.log("Session detected:", data.session);
+    if (!error && data.session) {
+
+        window.location.replace("dashboard.html");
+
+    }
+
+})();
+
+// EXISTING SHOP EASE CODE
+const form = document.getElementById("registrationForm");
+
+// Your existing registration code...let registerButton = document.getElementById("registerButton");
 let emailInput = document.getElementById("email");
 let emailError = document.getElementById("emailError");
 let nameInput = document.getElementById("name");
@@ -42,29 +66,13 @@ emailInput.addEventListener("input", function() {
     }
 
 });
-clearDataButton.addEventListener("click", function() {
-
-    localStorage.removeItem("registeredEmails");
-
-    alert("Test registration data cleared successfully!");
-
-});
-
 registrationForm.addEventListener("submit", async function(event) {
     event.preventDefault();
     let customerName = document.getElementById("name").value.trim();
     let formattedName = customerName.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
     let customerEmail = document.getElementById("email").value.trim();
-    let registeredEmails = JSON.parse(
-    localStorage.getItem("registeredEmails")
-) || [];
-
-if (registeredEmails.includes(customerEmail.toLowerCase())) {
-    document.getElementById("message").textContent = "This email is already registered!";
-
-    return;
-}
+    let customerPassword = document.getElementById("password").value;
 
     let customerLanguage = document.getElementById("language").value;
     let namePattern = /^[\p{L}]+(?:[ '\u2019-][\p{L}]+)*$/u;
@@ -104,6 +112,22 @@ if (customerName === "") {
     try {
     registerButton.disabled = true;
     registerButton.textContent = "Processing...";
+    const { data, error } = await supabaseClient.auth.signUp({
+    email: customerEmail,
+    password: customerPassword,
+    options: {
+        data: {
+            full_name: formattedName
+        }
+    }
+});
+
+if (error) {
+    document.getElementById("message").textContent =
+        error.message;
+
+    return;
+}
     let response = await fetch("https://pranesh500.app.n8n.cloud/webhook/9b2c3af4-78c2-46d9-9ee3-2ea85f9df5d2", {
         method: "POST",
         headers: {
@@ -132,13 +156,10 @@ if (customerName === "") {
                 "! உங்கள் பதிவு பெறப்பட்டது. வரவேற்பு மின்னஞ்சல் தயாராகிறது.";
 
         }
-       registeredEmails.push(customerEmail.toLowerCase());
-
-localStorage.setItem(
-    "registeredEmails",
-    JSON.stringify(registeredEmails)
-);
         registrationForm.reset();
+        setTimeout(() => {
+    window.location.href = "login.html";
+}, 1500);
 
     } else {
 
@@ -168,5 +189,5 @@ localStorage.setItem(
     console.log(customerLanguage);
   
 
-    alert("Registration button clicked!");
+    
 });
