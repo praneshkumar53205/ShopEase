@@ -50,7 +50,7 @@ const products = [
         id: 2,
         image: "images/Cute babyy.jpeg",
         name: "BABY DOLL",
-        price: 1000000000000000000,
+        price: 10000000000000000,
         description: "Cute."
     
     },
@@ -86,14 +86,14 @@ const products = [
     {
         id: 7,
         name: "GREETING CARD",
-        price: 50000,
+        price: 500,
         description: "To your loved one!",
         image: "images/greetingcard.jpeg"
     },
    {
         id: 8,
         name: "KEYCHAIN",
-        price: 1000000000000,
+        price: 100,
         description: "Always loving!.",
         image: "images/keychain.jpeg"
     },
