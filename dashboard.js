@@ -107,7 +107,7 @@ const products = [
       {
         id: 10,
         name: "CHOCOLATE",
-        price: 1000,
+        price: 100,
         description: "too much love.",
         image: "images/little.jpeg"
     },
