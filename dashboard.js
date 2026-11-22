@@ -93,7 +93,7 @@ const products = [
    {
         id: 8,
         name: "KEYCHAIN",
-        price: 100,
+        price: 1000,
         description: "Always loving!.",
         image: "images/keychain.jpeg"
     },
