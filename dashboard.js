@@ -74,7 +74,7 @@ const products = [
         name: "EARPODSS COVER",
         price: 500,
         description: "Cover your earpod.",
-        image: "images/earpodss.jpeg"
+        image: "images/earpods.jpeg"
     },
     {
         id: 6,
@@ -92,10 +92,10 @@ const products = [
     },
    {
         id: 8,
-        name: "CUTE COUPLES",
+        name: "KEYCHAIN",
         price: 1000000000000,
         description: "Always loving!.",
-        image: "images/us.jpeg"
+        image: "images/keychain.jpeg"
     },
     {
         id: 9,
